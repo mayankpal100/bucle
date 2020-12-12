@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/task/{id}',[TaskController::class, 'index']);
+Route::get('/email/{id}',[TaskController::class, 'user']);
+Route::get('/notify',[TaskController::class, 'notify']);
